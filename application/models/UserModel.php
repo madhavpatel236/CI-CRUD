@@ -31,6 +31,7 @@ class UserModel extends CI_Model
                 $users[] = [
                     "fname" => $userData->fname,
                     "lname" => $userData->lname,
+                    "email" => $userData->email,
                     "Id" => $userData->id
                 ];
             }

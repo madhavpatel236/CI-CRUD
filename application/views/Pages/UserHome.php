@@ -41,6 +41,7 @@
                 <tr>
                     <th>fname</th>
                     <th>lname</th>
+                    <th>email</th>
                     <th></th>
                 </tr>
             </thead>
@@ -49,6 +50,7 @@
                     <tr>
                         <td> <?php echo $user['fname'] ?> </td>
                         <td> <?php echo $user['lname'] ?></td>
+                        <td> <?php echo $user['email'] ?></td>
                         <td>
                             <input type="hidden" name="id" value="<?php echo $user['Id']; ?>" />
                             <form method="post" action="<?php echo site_url("UserController/edit"); ?>">
