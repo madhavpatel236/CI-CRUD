@@ -384,6 +384,10 @@ $config['encryption_key'] = '';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
+
+// $config['sess_driver'] = 'memcached';
+// $config['sess_save_path'] = "172.55.21.33:11211";
+    
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_samesite'] = 'Lax';

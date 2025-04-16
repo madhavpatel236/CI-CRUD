@@ -26,6 +26,8 @@ class UserController extends CI_Controller
 
         // $CI = &get_instance();
         // $CI->load->model('UserModel');
+        // $CI->load->driver('cache');
+        // $CI->cache->memcached->get();
         $this->load->model('UserModel');
         $this->userModelObj = new userModel;
         $this->load->helper('url');
