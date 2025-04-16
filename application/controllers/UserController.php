@@ -24,10 +24,15 @@ class UserController extends CI_Controller
         // $fileContent = file_get_contents( DIRPATH. '/views/Pages/UserHome.php');
         // $fileContent = get_dir_file_info( DIRPATH. '/models/UserModel.php');
 
-        // $CI = &get_instance();
+        // $CI  = &get_instance();
         // $CI->load->model('UserModel');
         // $CI->load->driver('cache');
         // $CI->cache->memcached->get();
+        // $this->load->helper('smiley');
+        // $this->load->library('table');
+// echo "fffffd";exit;
+        // $image_array = get_clickable_smileys('localhost/codeigniter/index.php', 'question');
+        // var_dump($image_array);
         $this->load->model('UserModel');
         $this->userModelObj = new userModel;
         $this->load->helper('url');
@@ -36,9 +41,14 @@ class UserController extends CI_Controller
     public function view()
     {
         $this->show();
-        $this->load->view('/Pages/UserHome', [$this->data, $this->editUser]);
+        return $this->load->view('Pages/UserHome', [
+            'data' => $this->data,
+            'editUser' => $this->editUser
+        ]);
+        
+        // $this->load->view('/Pages/UserHome', [$this->data, $this->editUser]);
 
-        // $this->load->view('Pages/UserHome', $this->data);
+        // $this->load->view('/Pages/UserHome', $this->data);
     }
 
     public function register()

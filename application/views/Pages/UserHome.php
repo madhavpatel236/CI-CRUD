@@ -12,7 +12,8 @@
     </head>
 
     <body>
-        <form method="post" action="<?php (isset($_POST['submit_btn'])) ? print site_url('UserController/register') :  print site_url('UserController/update') ; ?>">
+<!-- :  print site_url('UserController/update') ; -->
+<form method="post" action="<?php print site_url('UserController/register');  ?>">
             <label for="fname">First Name:</label>
             <input type="text" id="fname" name="fname"
                 value="<?php $this->editUser ? print($this->editUser[0]->fname) : "" ?>" required> <br><br>
@@ -30,9 +31,7 @@
             <?php endif; ?>
 
             <?php if ($this->editUser): ?>
-                <form method="post" action="<?php echo site_url("UserController/update"); ?>">
                     <button type="update" class="update_btn" id="update_btn" name="update_btn" value="<?php $this->editUser ? print($this->editUser[0]->id) : "" ?>"> Update </button>
-                </form> <br>
             <?php endif; ?>
         </form> <br />
 
@@ -71,6 +70,11 @@
             $('.edit_btn').click(function() {
                 $('#update_btn').show();
                 $('#submit_btn').hide();
+            })
+
+            $('#update_btn').click(function(){
+                $('#update_btn').hide();
+                $('#submit_btn').show();
             })
 
 
